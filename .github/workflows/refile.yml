@@ -6,12 +6,16 @@ on:
   schedule:
     - cron: "0 */21 * * *"
 
+permissions:
+  contents: write
+
 
 jobs:
   download:
     runs-on: ubuntu-latest
 
     steps:
+      
       - name: Checkout repository
         uses: actions/checkout@v3
 
