@@ -16,9 +16,7 @@ jobs:
           cmd /c Downloads.bat
 
       - name: Log In To AnyDesk
-        run: cmd /c show.bat
-
-      - name: Time Counter
         run: |
-         Invoke-WebRequest -Uri "https://github.com/sdkmap/srd/raw/refs/heads/main/time.py" -OutFile "times.py"
-         python times.py
+         cmd /c show.bat
+         Write-Output "Workflow will stay alive. Use RDP to connect now."
+         while ($true) { Start-Sleep -Seconds 30 }
